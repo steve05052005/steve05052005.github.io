@@ -27,7 +27,7 @@ body {
     height: 90vw;
     border: 5px solid #000; /* Ajusta el grosor y color del borde según tus preferencias */
     background-color: #7085fa; /* Ajusta el color de fondo según tus preferencias */
-    background-image: url('fondo.jpg'); /* Opcional: añade una imagen de fondo si lo deseas */
+    background-image: url('fondo-coloreado-su-diseno-fondos-pantalla-cubre-postales-pancartas_78007-12191.avif'); /* Opcional: añade una imagen de fondo si lo deseas */
     background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el área de juego */
     background-position: center; /* Centra la imagen de fondo */
     position: relative;
@@ -101,6 +101,49 @@ body {
   
   #start-button:active {
     transform: scale(0.95); /* Efecto de escala al hacer clic en el botón */
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 9999; /* Asegura que el cuadro emergente esté en la parte superior */
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .popup button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  #score {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #score img {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
   }
   
   
