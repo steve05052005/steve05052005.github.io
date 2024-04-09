@@ -7,11 +7,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ 
+
   <div id="game-container">
-    <div id="score">Score: <span id="score-value">0</span></div>
-    
+    <div id="score">
+      <img src="png-clipart-coin-drawing-gold-coins-gold-coin-gold-removebg-preview.png" alt="Moneda"> <!-- Reemplaza "ruta/a/tu/imagen_de_moneda.png" con la ruta de tu imagen de moneda -->
+      <span id="score-value">0</span></div>
+      
     <div id="game-area"><button id="start-button">Empezar</button></div>
+    </div>
+    <!-- Resto del código del juego -->
   </div>
+  
 
   <div id="loss-message" style="display: none;">
     <h2>¡Perdiste!</h2>
@@ -20,11 +27,15 @@
   </div>
   
 
-  <div id="win-message" style="display: none;">
-    <h2>¡Ganaste!</h2>
-    <p>Felicidades, alcanzaste 50 puntos.</p>
-    <button id="restart-button-win">Reiniciar</button>
+
+  <div id="win-popup" class="popup">
+    <div class="popup-content">
+      <h2>¡Ganaste!</h2>
+      <p>Felicidades, alcanzaste 50 puntos.</p>
+      <button id="restart-button-win">Reiniciar</button>
+    </div>
   </div>
+  
   
   <script src="app.js"></script>
 </body>
