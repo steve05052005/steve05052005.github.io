@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const scoreValue = document.getElementById('score-value');
   const startButton = document.getElementById('start-button');
   const lossMessage = document.getElementById('loss-message');
-  const winMessage = document.getElementById('win-message');
+  const winMessage = document.getElementById('win-popup');
   const restartButton = document.getElementById('restart-button');
   const restartButtonWin = document.getElementById('restart-button-win');
 
@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const objects = [
     { src: 'col1.png', points: 1 },
-    { src: 'col2.png', points: 1 },
+    { src: 'col2.png', points: 5 },
     { src: 'col3.png', points: 1 },
-    { src: 'col4.png', points: 1 },
-    { src: 'col5.png', points: 1 },
+    { src: 'col4.png', points: 3 },
+    { src: 'col5.png', points: 2 },
     { src: 'col6.png', points: 1 },
     { src: 'col7.png', points: -5 }
   ];
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       score += obj.points;
       scoreValue.textContent = score;
       if (score >= 50) {
-        winMessage.style.display = 'block';
+        document.getElementById('win-popup').style.display = 'block';
         return;
       }
       if (obj.points < 0) {
@@ -65,13 +65,18 @@ document.addEventListener('DOMContentLoaded', function () {
     objectsDropped = 0;
     lossMessage.style.display = 'none';
     winMessage.style.display = 'none';
-    gameStarted = true;
+    gameStarted = false;
+  
+    // Eliminar todos los objetos existentes del área de juego
+    const objects = document.querySelectorAll('.object');
+    objects.forEach(object => object.remove());
   }
+  
 
   function startGame() {
     resetGame();
     startButton.style.display = 'none';
-    setInterval(createObject, 3000);
+    setInterval(createObject, 1500);
     gameStarted = true;
   }
 
