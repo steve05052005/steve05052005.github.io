@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="score">Score: <span id="score-value">0</span></div>
+    
+    <div id="game-area"><button id="start-button">Empezar</button></div>
+  </div>
+
+  <div id="loss-message" style="display: none;">
+    <h2>¡Perdiste!</h2>
+    <p>Se dejaron caer demasiados objetos.</p>
+    <button id="restart-button">Reiniciar</button>
+  </div>
+  
+
+  <div id="win-message" style="display: none;">
+    <h2>¡Ganaste!</h2>
+    <p>Felicidades, alcanzaste 50 puntos.</p>
+    <button id="restart-button-win">Reiniciar</button>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #game-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('ocean-life-scenery-cartoon-background-free-vector.jpg'); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen de fondo */
+  background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el contenedor */
+  background-position: center; /* Centra la imagen de fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #score {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #game-area {
+    width: 90%;
+    max-width: 400px;
+    height: 90vw;
+    border: 5px solid #000; /* Ajusta el grosor y color del borde según tus preferencias */
+    background-color: #7085fa; /* Ajusta el color de fondo según tus preferencias */
+    background-image: url('fondo.jpg'); /* Opcional: añade una imagen de fondo si lo deseas */
+    background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el área de juego */
+    background-position: center; /* Centra la imagen de fondo */
+    position: relative;
+    overflow: hidden; /* Evita que los objetos salgan del área de juego */
+  }
+  
+  
+  .object {
+    position: absolute;
+    cursor: pointer;
+    max-width: 10%; /* Ajusta el tamaño máximo según tus necesidades */
+    max-height: 10%; /* Ajusta el tamaño máximo según tus necesidades */
+    animation: fall 20s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -7px;
+    }
+    100% {
+      top: 510px; /* Ajusta la altura final de la caída */
+    }
+  }
+
+  #loss-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  #loss-message h2 {
+    margin-bottom: 10px;
+  }
+  
+  #loss-message button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #loss-message button:hover {
+    background-color: #0056b3;
+  }
+  
+  #start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #00ff15;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 260px;
+  }
+  
+  #start-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efecto de escala al pasar el cursor sobre el botón */
+  }
+  
+  #start-button:active {
+    transform: scale(0.95); /* Efecto de escala al hacer clic en el botón */
+  }
+  
+  
