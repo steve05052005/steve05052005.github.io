@@ -1,149 +1,160 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  #game-container {
-    width: 100%;
-    height: 100vh;
-    background-image: url('ocean-life-scenery-cartoon-background-free-vector.jpg'); /* Reemplaza 'fondo.jpg' con la ruta de tu imagen de fondo */
-  background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el contenedor */
-  background-position: center; /* Centra la imagen de fondo */
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.maestros {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-  }
-  
-  #score {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  #game-area {
-    width: 90%;
-    max-width: 400px;
-    height: 90vw;
-    border: 5px solid #000; /* Ajusta el grosor y color del borde según tus preferencias */
-    background-color: #7085fa; /* Ajusta el color de fondo según tus preferencias */
-    background-image: url('fondo-coloreado-su-diseno-fondos-pantalla-cubre-postales-pancartas_78007-12191.avif'); /* Opcional: añade una imagen de fondo si lo deseas */
-    background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el área de juego */
-    background-position: center; /* Centra la imagen de fondo */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.maestro {
+    margin: 10px;
+}
+
+.maestro img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* para hacer la imagen un circulo */
+    border: 2px solid #000; /* borde negro para destacar */
+}
+
+.maestro p {
+    margin-top: 5px;
+}
+
+.votos {
+    margin-top: 5px;
+    background-color: #ffd700; /* color de fondo amarillo */
+    padding: 5px 10px;
+    border-radius: 20px; /* para hacer el porcentaje de votos un poco redondo */
+    font-weight: bold;
+}
+
+
+header {
+    text-align: center;
+}
+
+header img {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Para asegurarse de que el fondo esté detrás de todo */
+}
+
+.fondo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3; /* para hacer el fondo un poco transparente */
+}
+
+
+.contenedor-maestros {
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    white-space: nowrap; /* Evitar que los elementos se envuelvan */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+}
+
+.maestros {
+    display: inline-block; /* Mostrar las imágenes en línea */
+    transition: transform 0.3s ease; /* Animación de desplazamiento */
+}
+
+.maestro {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top; /* Alinear las imágenes en la parte superior */
+}
+
+
+
+.robot {
     position: relative;
-    overflow: hidden; /* Evita que los objetos salgan del área de juego */
-  }
-  
-  
-  .object {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.robot img {
+    width: 120px;
+    animation: flotar 5s ease-in-out infinite alternate; /* Animación de flotación */
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.dialogo {
     position: absolute;
-    cursor: pointer;
-    max-width: 10%; /* Ajusta el tamaño máximo según tus necesidades */
-    max-height: 10%; /* Ajusta el tamaño máximo según tus necesidades */
-    animation: fall 20s linear infinite;
-  }
-  
-  @keyframes fall {
-    0% {
-      top: -7px;
-    }
-    100% {
-      top: 510px; /* Ajusta la altura final de la caída */
-    }
-  }
-
-  #loss-message {
-    position: fixed;
-    top: 50%;
+    top: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background-color: #fff;
-    padding: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-  }
-  
-  #loss-message h2 {
-    margin-bottom: 10px;
-  }
-  
-  #loss-message button {
-    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dialogo p {
+    margin: 0;
+}
+
+.dialogo button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #loss-message button:hover {
-    background-color: #0056b3;
-  }
-  
-  #start-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #00ff15;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-top: 260px;
-  }
-  
-  #start-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Efecto de escala al pasar el cursor sobre el botón */
-  }
-  
-  #start-button:active {
-    transform: scale(0.95); /* Efecto de escala al hacer clic en el botón */
-  }
+    margin-top: 10px;
+}
 
-  .popup {
-    display: none;
+.dialogo button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.alerta {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-    border: 2px solid #007bff;
+    background-color: #f44336; /* Rojo */
+    color: white;
+    padding: 15px;
     border-radius: 10px;
-    padding: 20px;
-    z-index: 9999; /* Asegura que el cuadro emergente esté en la parte superior */
-  }
-  
-  .popup-content {
-    text-align: center;
-  }
-  
-  .popup button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .popup button:hover {
-    background-color: #0056b3;
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Asegurarse de que esté encima de todo */
+    display: none; /* Ocultar por defecto */
+}
 
-  
-  #score {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  #score img {
-    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
-    height: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
-    vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
-  }
-  
-  
+.alerta p {
+    margin: 0;
+}
+
+.show {
+    display: block; /* Mostrar cuando se active */
+}

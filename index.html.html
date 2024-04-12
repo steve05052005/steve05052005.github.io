@@ -1,42 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elección del Maestro del Mes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
+    <header>
+        <img src="logo.png" alt="Logo del Instituto">
+    </header>
 
-  <div id="game-container">
-    <div id="score">
-      <img src="png-clipart-coin-drawing-gold-coins-gold-coin-gold-removebg-preview.png" alt="Moneda"> <!-- Reemplaza "ruta/a/tu/imagen_de_moneda.png" con la ruta de tu imagen de moneda -->
-      <span id="score-value">0</span></div>
-      
-    <div id="game-area"><button id="start-button">Empezar</button></div>
+    <div class="fondo">
+        <img src="mar.jpg" alt="Fondo de la Página">
     </div>
-    <!-- Resto del código del juego -->
-  </div>
-  
+    <h1>Elige al Maestro del Año</h1>
+    
+    <div class="contenedor-maestros">
+        <div class="maestros">
+            <!-- Imágenes de los maestros -->
+            <div class="maestro" id="maestro1">
+                <img src="yocasta.jpg" alt="Maestro 1">
+                <p>Yocasta</p>
+                <div class="votos">0%</div>
+            </div>
+            <div class="maestro" id="maestro2">
+                <img src="delki.jpg" alt="Maestro 2">
+                <p>Delkin</p>
+                <div class="votos">0%</div>
+            </div>
 
-  <div id="loss-message" style="display: none;">
-    <h2>¡Perdiste!</h2>
-    <p>Se dejaron caer demasiados objetos.</p>
-    <button id="restart-button">Reiniciar</button>
-  </div>
-  
+            <div class="maestro" id="maestro3">
+                <img src="a.jpg" alt="Maestro 3">
+                <p>Alexandra</p>
+                <div class="votos">0%</div>
+            </div>
 
-
-  <div id="win-popup" class="popup">
-    <div class="popup-content">
-      <h2>¡Ganaste!</h2>
-      <p>Felicidades, alcanzaste 50 puntos.</p>
-      <button id="restart-button-win">Reiniciar</button>
+            <div class="maestro" id="maestro4">
+                <img src="e.jpg" alt="Maestro 4">
+                <p>Ayleen</p>
+                <div class="votos">0%</div>
+            </div>
+            
+        </div>
     </div>
-  </div>
-  
-  
-  <script src="app.js"></script>
+    
+    <div id="limiteVotos" class="alerta">
+        <p>¡Ya has alcanzado el límite de votos!</p>
+    </div>
+    
+    
+    </div>
+
+    <div class="robot">
+        <img src="robot.png" alt="Robot">
+        <div class="dialogo">
+            <p id="mensaje">¡Hola! Soy el asistente del Instituto. ¿Necesitas ayuda?</p>
+            <button id="siguiente">Siguiente</button>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+
 </body>
 </html>
